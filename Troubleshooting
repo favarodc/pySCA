@@ -1,0 +1,44 @@
+
+scaSectorID.py issue:
+
+Selected kpos=4 significant eigenmodes.
+/anaconda2/lib/python2.7/site-packages/scipy/stats/stats.py:1713: FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
+  return np.add.reduce(sorted[indexer] * weights, axis=axis) / sumval
+Calculations complete. Writing to database file Outputs/PF00071_rd2
+
+
+
+AND
+
+ValueError                                Traceback (most recent call last)
+<ipython-input-41-9fe8591b3707> in <module>()
+      6     binwidth=2*iqr*(len(Vpica)**(-0.33))
+      7     nbins=round((max(Vpica[:,k])-min(Vpica[:,k]))/binwidth)
+----> 8     plt.subplot(Dsect['kpos'],1,k)
+      9     h_params = plt.hist(Vpica[:,k], nbins)
+     10     x_dist = np.linspace(min(h_params[1]), max(h_params[1]), num=100)
+
+/anaconda2/lib/python2.7/site-packages/matplotlib/pyplot.pyc in subplot(*args, **kwargs)
+   1055 
+   1056     fig = gcf()
+-> 1057     a = fig.add_subplot(*args, **kwargs)
+   1058     bbox = a.bbox
+   1059     byebye = []
+
+/anaconda2/lib/python2.7/site-packages/matplotlib/figure.pyc in add_subplot(self, *args, **kwargs)
+   1255                     self._axstack.remove(ax)
+   1256 
+-> 1257             a = subplot_class_factory(projection_class)(self, *args, **kwargs)
+   1258         self._axstack.add(key, a)
+   1259         self.sca(a)
+
+/anaconda2/lib/python2.7/site-packages/matplotlib/axes/_subplots.pyc in __init__(self, fig, *args, **kwargs)
+     65                     raise ValueError(
+     66                         ("num must be 1 <= num <= {maxn}, not {num}"
+---> 67                         ).format(maxn=rows*cols, num=num))
+     68                 self._subplotspec = GridSpec(
+     69                         rows, cols, figure=self.figure)[int(num) - 1]
+
+ValueError: num must be 1 <= num <= 4, not 0
+
+<Figure size 576x576 with 0 Axes>
